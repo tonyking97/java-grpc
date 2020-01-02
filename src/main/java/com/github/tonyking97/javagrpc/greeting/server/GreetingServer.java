@@ -14,6 +14,8 @@ public class GreetingServer {
 
         server.start();
 
+        System.out.println("gRPC Server Started Successfully.");
+
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Received Shut Down Request.");
             server.shutdown();
