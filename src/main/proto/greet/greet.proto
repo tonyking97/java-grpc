@@ -20,5 +20,14 @@ message GreetResponse {
 service GreetService {
     //Unary call
     rpc Greet(GreetRequest) returns (GreetResponse) {};
+
+    //Server Streaming
+    rpc GreetManyTimes(GreetRequest) returns (stream GreetResponse) {};
+
+    //Client Streaming
+    rpc LongGreet(stream GreetRequest) returns (GreetResponse) {};
+
+    //Bi-Directional Streaming
+    rpc GreetEveryone(stream GreetRequest) returns (stream GreetResponse) {};
 }
 
